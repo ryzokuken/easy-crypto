@@ -3,35 +3,28 @@
   "localized-strings": {
     "next": "Next",
     "previous": "Previous",
-    "tagline": "A website for testing",
+    "tagline": "An easier crypto API for Node.js",
     "docs": {
-      "doc1": {
-        "title": "Latin-ish",
-        "sidebar_label": "Example Page"
+      "contributing": {
+        "title": "Contributing",
+        "sidebar_label": "Contributing"
       },
-      "doc2": {
-        "title": "document number 2"
+      "hash": {
+        "title": "Hash",
+        "sidebar_label": "Hash"
       },
-      "doc3": {
-        "title": "This is document number 3"
-      },
-      "doc4": {
-        "title": "Other Document"
-      },
-      "doc5": {
-        "title": "Fifth Document"
+      "installation": {
+        "title": "Installation",
+        "sidebar_label": "Installation"
       }
     },
     "links": {
       "Docs": "Docs",
-      "API": "API",
-      "Help": "Help",
-      "Blog": "Blog"
+      "API": "API"
     },
     "categories": {
-      "Docusaurus": "Docusaurus",
-      "First Category": "First Category",
-      "Second Category": "Second Category"
+      "Getting Started": "Getting Started",
+      "API Reference": "API Reference"
     }
   },
   "pages-strings": {
