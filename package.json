@@ -2,7 +2,7 @@
   "name": "easy-crypto",
   "version": "0.1.0",
   "description": "A WIP module aimed at providing a safer, easier to use and beginner friendly crypto API for Node.js",
-  "main": "src/index.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
