@@ -6,9 +6,20 @@ function hash(algorithm, message, inputEncoding, outputEncoding) {
   return func.digest(outputEncoding);
 }
 
-function hashStream(algorithm, input, output) {
-  const func = crypto.createHash(algorithm);
-  input.pipe(func).pipe(output);
+function hashStream(algorithm, input) {
+  return new Promise((resolve, reject) => {
+    let data;
+
+    input.on('data', (chunk) => {
+      data = data === undefined ? chunk : (data + chunk);
+    });
+
+    input.on('end', () => {
+      resolve(data === undefined ? undefined : hash(algorithm, data));
+    });
+
+    input.on('error', (err) => reject(err));
+  });
 }
 
 module.exports = {
