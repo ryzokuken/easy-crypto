@@ -6,19 +6,31 @@ function hash(algorithm, message, inputEncoding, outputEncoding) {
   return func.digest(outputEncoding);
 }
 
-function hashStream(algorithm, input) {
+function hashStream(algorithm, input, inputEncoding) {
   return new Promise((resolve, reject) => {
     let data;
+    let isBuffer = false;
 
-    input.on('data', (chunk) => {
-      data = data === undefined ? chunk : (data + chunk);
+    input.on('data', chunk => {
+      if (Buffer.isBuffer(chunk)) {
+        isBuffer = true;
+        chunk = chunk.toString('utf8');
+      }
+
+      if (data === undefined) {
+        data = chunk;
+      } else {
+        data += chunk;
+      }
     });
 
     input.on('end', () => {
-      resolve(data === undefined ? undefined : hash(algorithm, data));
+      if (data === undefined) {
+        reject(new Error('No data to hash.'));
+      } else {
+        resolve(hash(algorithm, data, isBuffer ? 'utf8' : inputEncoding));
+      }
     });
-
-    input.on('error', (err) => reject(err));
   });
 }
 

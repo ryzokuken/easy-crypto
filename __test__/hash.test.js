@@ -13,19 +13,52 @@ test('hashes buffers', () => {
   expect(hash.hash('sha256', buf).toString('hex')).toBe(hashOutput);
 });
 
-test('hashes streams', () => {
+test('hashes string streams', async () => {
   expect.assertions(1);
 
   const inputStream = new stream.Readable({
     objectMode: true,
     read() {}
   });
-  setTimeout(() => {
+  process.nextTick(() => {
     inputStream.push('Hello, World!');
     inputStream.push(null);
-  }, 1000);
+  });
 
-  return hash
-    .hashStream('sha256', inputStream)
-    .then(output => expect(output.toString('hex')).toBe(hashOutput));
+  const output = await hash.hashStream('sha256', inputStream);
+  expect(output.toString('hex')).toBe(hashOutput);
+});
+
+test('hashes buffer streams', async () => {
+  expect.assertions(1);
+
+  const inputStream = new stream.Readable({
+    objectMode: true,
+    read() {}
+  });
+  process.nextTick(() => {
+    inputStream.push(Buffer.from('Hello, World!'));
+    inputStream.push(null);
+  });
+
+  const output = await hash.hashStream('sha256', inputStream);
+  expect(output.toString('hex')).toBe(hashOutput);
+});
+
+test('cannot hash blank streams', async () => {
+  expect.assertions(1);
+
+  const inputStream = new stream.Readable({
+    objectMode: true,
+    read() {}
+  });
+  process.nextTick(() => {
+    inputStream.push(null);
+  });
+
+  try {
+    await hash.hashStream('sha256', inputStream);
+  } catch (err) {
+    expect(err).toEqual(new Error('No data to hash.'));
+  }
 });
