@@ -1,3 +1,4 @@
+const stream = require('stream');
 const hash = require('../hash');
 
 const hashOutput =
@@ -10,4 +11,21 @@ test('hashes strings', () => {
 test('hashes buffers', () => {
   const buf = Buffer.from('Hello, World!');
   expect(hash.hash('sha256', buf).toString('hex')).toBe(hashOutput);
+});
+
+test('hashes streams', () => {
+  expect.assertions(1);
+
+  const inputStream = new stream.Readable({
+    objectMode: true,
+    read() {}
+  });
+  setTimeout(() => {
+    inputStream.push('Hello, World!');
+    inputStream.push(null);
+  }, 1000);
+
+  return hash
+    .hashStream('sha256', inputStream)
+    .then(output => expect(output.toString('hex')).toBe(hashOutput));
 });
