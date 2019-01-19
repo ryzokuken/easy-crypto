@@ -62,3 +62,23 @@ test('cannot hash blank streams', async () => {
     expect(err).toEqual(new Error('No data to hash.'));
   }
 });
+
+test('fails for inconsistent streams', async () => {
+  expect.assertions(1);
+
+  const inputStream = new stream.Readable({
+    objectMode: true,
+    read() {}
+  });
+  process.nextTick(() => {
+    inputStream.push('Hello, World!');
+    inputStream.push(new Buffer('Hello, World!'));
+    inputStream.push(null);
+  });
+
+  try {
+    await hash.hashStream('sha256', inputStream);
+  } catch (err) {
+    expect(err).toEqual(new Error('Inconsisent data.'));
+  }
+});

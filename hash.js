@@ -9,12 +9,19 @@ function hash(algorithm, message, inputEncoding, outputEncoding) {
 function hashStream(algorithm, input, inputEncoding) {
   return new Promise((resolve, reject) => {
     let data;
-    let isBuffer = false;
+    let wasBuffer;
 
     input.on('data', chunk => {
-      if (Buffer.isBuffer(chunk)) {
-        isBuffer = true;
+      const isBuffer = Buffer.isBuffer(chunk);
+      if ((!isBuffer && wasBuffer) || (isBuffer && wasBuffer === false)) {
+        reject(new Error('Inconsisent data.'));
+      }
+
+      if (isBuffer) {
+        wasBuffer = true;
         chunk = chunk.toString('utf8');
+      } else {
+        wasBuffer = false;
       }
 
       if (data === undefined) {
@@ -28,7 +35,7 @@ function hashStream(algorithm, input, inputEncoding) {
       if (data === undefined) {
         reject(new Error('No data to hash.'));
       } else {
-        resolve(hash(algorithm, data, isBuffer ? 'utf8' : inputEncoding));
+        resolve(hash(algorithm, data, wasBuffer ? 'utf8' : inputEncoding));
       }
     });
   });
