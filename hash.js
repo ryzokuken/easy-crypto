@@ -11,10 +11,12 @@ function hashStream(algorithm, input, inputEncoding) {
     let data;
     let wasBuffer;
 
-    input.on('data', chunk => {
+    const dataHandler = chunk => {
       const isBuffer = Buffer.isBuffer(chunk);
       if ((!isBuffer && wasBuffer) || (isBuffer && wasBuffer === false)) {
         reject(new Error('Inconsisent data.'));
+        input.removeListener('data', dataHandler);
+        return;
       }
 
       if (isBuffer) {
@@ -29,7 +31,8 @@ function hashStream(algorithm, input, inputEncoding) {
       } else {
         data += chunk;
       }
-    });
+    };
+    input.on('data', dataHandler);
 
     input.on('end', () => {
       if (data === undefined) {
