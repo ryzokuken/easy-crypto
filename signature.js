@@ -53,17 +53,25 @@ function signStream(
   });
 }
 
-function verify(publicKey, algorithm, message, inputEncoding, outputEncoding) {
+function verify(
+  publicKey,
+  algorithm,
+  message,
+  signature,
+  inputEncoding,
+  outputEncoding
+) {
   const verifyFunc = crypto.createVerify(algorithm);
   verifyFunc.update(message, inputEncoding);
   verifyFunc.end();
-  return verifyFunc.verify(publicKey, outputEncoding);
+  return verifyFunc.verify(publicKey, signature, outputEncoding);
 }
 
 function verifyStream(
   publicKey,
   algorithm,
   input,
+  signature,
   inputEncoding,
   outputEncoding
 ) {
@@ -99,7 +107,7 @@ function verifyStream(
         reject(new Error('No data to sign.'));
       } else {
         resolve(
-          verify(publicKey, algorithm, data, inputEncoding, outputEncoding)
+          verify(publicKey, algorithm, data, signature, inputEncoding, outputEncoding)
         );
       }
     });
