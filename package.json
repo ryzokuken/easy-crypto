@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "lint": "eslint *.js",
-    "build-doc": "jsdoc --readme README.md *.js --destination docs"
+    "build-doc": "jsdoc README.md *.js"
   },
   "repository": {
     "type": "git",
