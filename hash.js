@@ -1,12 +1,33 @@
 const crypto = require('crypto');
 
+/**
+ * The hash module contains a small set of utilities for computing hashes.
+ * @module easy-crypto/hash
+ */
+
+/**
+ * Hash a given message using the specified hash algorithm.
+ * @param {string} algorithm The hashing algorithm to be used.
+ * @param {string|Buffer|TypedArray|DataView} message The message to be hashed.
+ * @param {string} inputEncoding The encoding of the `message`. If nothing is provided and `message` is a string, an encoding of `'utf8'` is enforced. If `message` is a Buffer, TypedArray, or DataView, then inputEncoding is ignored.
+ * @param {string} outputEncoding The encoding of the output. If encoding is provided a string will be returned; otherwise a Buffer is returned.
+ * @returns {string|Buffer} The hash of the input message.
+ */
 function hash(algorithm, message, inputEncoding, outputEncoding) {
   const func = crypto.createHash(algorithm);
   func.update(message, inputEncoding);
   return func.digest(outputEncoding);
 }
 
-function hashStream(algorithm, input, inputEncoding) {
+/**
+ * Hash a message encapsulated inside a stream using the specified hash algorithm.
+ * @param {string} algorithm The hashing algorithm to be used.
+ * @param {ReadableStream<string|Buffer|TypedArray|DataView>} input The stream containing the message to be hashed.
+ * @param {string} inputEncoding The encoding of the `message`. If nothing is provided and `message` is a string, an encoding of `'utf8'` is enforced. If `message` is a Buffer, TypedArray, or DataView, then inputEncoding is ignored.
+ * @param {string} outputEncoding The encoding of the output. If encoding is provided a string will be returned; otherwise a Buffer is returned.
+ * @returns {Promise<string|Buffer>} The hash of the input message.
+ */
+function hashStream(algorithm, input, inputEncoding, outputEncoding) {
   return new Promise((resolve, reject) => {
     let data;
     let wasBuffer;
@@ -38,7 +59,14 @@ function hashStream(algorithm, input, inputEncoding) {
       if (data === undefined) {
         reject(new Error('No data to hash.'));
       } else {
-        resolve(hash(algorithm, data, wasBuffer ? 'utf8' : inputEncoding));
+        resolve(
+          hash(
+            algorithm,
+            data,
+            wasBuffer ? 'utf8' : inputEncoding,
+            outputEncoding
+          )
+        );
       }
     });
   });
