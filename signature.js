@@ -10,7 +10,7 @@ const crypto = require('crypto');
  * Generate signatures for a message using a private key.
  * @param {Object|string|Buffer|KeyObject} privateKey The private key to be used for signing the message.
  * @param {string} algorithm The hashing algorithm to be used.
- * @param {string|Buffer|TypedArray|DataView} message The message to be signed.
+ * @param {Data} message The message to be signed.
  * @param {string} inputEncoding The encoding of the `message`. If `message` is a string and no value is provided, an encoding of `'utf8'` will be enforced. Ignored if message is a `Buffer`, `TypedArray` or `DataView`.
  * @param {string} outputEncoding The encoding of the output signature. If provided a `string` is returned, otherwise a `Buffer` is returned.
  * @returns {string|Buffer} The generated signature for the provided message.
@@ -26,7 +26,7 @@ function sign(privateKey, algorithm, message, inputEncoding, outputEncoding) {
  * Generate signatures for a message encapsulated in a stream using a private key.
  * @param {Object|string|Buffer|KeyObject} privateKey The private key to be used for signing the message.
  * @param {string} algorithm The hashing algorithm to be used.
- * @param {ReadableStream<string|Buffer|TypedArray|DataView>} input The input stream containing the message to be signed.
+ * @param {ReadableStream<Data>} input The input stream containing the message to be signed.
  * @param {string} inputEncoding The encoding of the `message`. If `message` is a string and no value is provided, an encoding of `'utf8'` will be enforced. Ignored if message is a `Buffer`, `TypedArray` or `DataView`.
  * @param {string} outputEncoding The encoding of the output signature. If provided a `string` is returned, otherwise a `Buffer` is returned.
  * @returns {Promise<string|Buffer>} The generated signature for the provided message.
@@ -81,7 +81,7 @@ function signStream(
  * Verify if a signature is valid for a given message using the corresponding public key.
  * @param {Object|string|Buffer|KeyObject} publicKey The public key to be used for verifying the signature.
  * @param {string} algorithm The hashing algorithm to be used.
- * @param {string|Buffer|TypedArray|DataView} message The message for which the signature has been generated.
+ * @param {Data} message The message for which the signature has been generated.
  * @param {string|Buffer} signature The signature to be verified.
  * @param {string} inputEncoding The encoding of the `message`. If `message` is a string and no value is provided, an encoding of `'utf8'` will be enforced. Ignored if message is a `Buffer`, `TypedArray` or `DataView`.
  * @param {string} signatureEncoding The encoding of the provided `signature`. If a signatureEncoding is specified, the signature is expected to be a string; otherwise signature is expected to be a Buffer, TypedArray, or DataView.
@@ -105,7 +105,7 @@ function verify(
  * Verify if a signature is valid for a given message encapsulated in a stream using the corresponding public key.
  * @param {Object|string|Buffer|KeyObject} publicKey The public key to be used for verifying the signature.
  * @param {string} algorithm The hashing algorithm to be used.
- * @param {ReadableStream<string|Buffer|TypedArray|DataView>} input The stream containing the message for which the signature has been generated.
+ * @param {ReadableStream<Data>} input The stream containing the message for which the signature has been generated.
  * @param {string|Buffer} signature The signature to be verified.
  * @param {string} inputEncoding The encoding of the `message`. If `message` is a string and no value is provided, an encoding of `'utf8'` will be enforced. Ignored if message is a `Buffer`, `TypedArray` or `DataView`.
  * @param {string} signatureEncoding The encoding of the provided `signature`. If a signatureEncoding is specified, the signature is expected to be a string; otherwise signature is expected to be a Buffer, TypedArray, or DataView.

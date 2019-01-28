@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "lint": "eslint *.js",
-    "build-doc": "jsdoc README.md *.js",
+    "build-doc": "jsdoc README.md *.js -c jsdoc.json",
     "publish-doc": "gh-pages -d out"
   },
   "repository": {

@@ -8,7 +8,7 @@ const crypto = require('crypto');
 /**
  * Hash a given message using the specified hash algorithm.
  * @param {string} algorithm The hashing algorithm to be used.
- * @param {string|Buffer|TypedArray|DataView} message The message to be hashed.
+ * @param {Data} message The message to be hashed.
  * @param {string} inputEncoding The encoding of the `message`. If nothing is provided and `message` is a string, an encoding of `'utf8'` is enforced. If `message` is a Buffer, TypedArray, or DataView, then inputEncoding is ignored.
  * @param {string} outputEncoding The encoding of the output. If encoding is provided a string will be returned; otherwise a Buffer is returned.
  * @returns {string|Buffer} The hash of the input message.
@@ -22,7 +22,7 @@ function hash(algorithm, message, inputEncoding, outputEncoding) {
 /**
  * Hash a message encapsulated inside a stream using the specified hash algorithm.
  * @param {string} algorithm The hashing algorithm to be used.
- * @param {ReadableStream<string|Buffer|TypedArray|DataView>} input The stream containing the message to be hashed.
+ * @param {ReadableStream<Data>} input The stream containing the message to be hashed.
  * @param {string} inputEncoding The encoding of the `message`. If nothing is provided and `message` is a string, an encoding of `'utf8'` is enforced. If `message` is a Buffer, TypedArray, or DataView, then inputEncoding is ignored.
  * @param {string} outputEncoding The encoding of the output. If encoding is provided a string will be returned; otherwise a Buffer is returned.
  * @returns {Promise<string|Buffer>} The hash of the input message.
