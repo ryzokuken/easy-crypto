@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest",
     "lint": "eslint *.js",
-    "build-doc": "jsdoc README.md *.js"
+    "build-doc": "jsdoc README.md *.js",
+    "publish-doc": "gh-pages -d out"
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,7 @@
   "homepage": "https://github.com/ryzokuken/easy-crypto#readme",
   "devDependencies": {
     "eslint": "^5.12.0",
+    "gh-pages": "^2.0.1",
     "jest": "^23.6.0",
     "jsdoc": "^3.5.5"
   }
