@@ -107,7 +107,8 @@ test('it should accept string (pem) keys', () => {
     }
   });
 
-  const signed = signature.sign(privateKey, 'sha256', message);
+  const key = { key: privateKey, type: 'pk'}
+  const signed = signature.sign(key, 'sha256', message);
   expect(signature.verify(publicKey, 'sha256', message, signed)).toBe(true);
 });
 

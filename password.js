@@ -1,4 +1,10 @@
+'use strict';
+
 const crypto = require('crypto');
+const fs = require('fs');
+const path = require('path');
+
+var protobuf = require('protocol-buffers');
 
 /**
  * The password module provides utilities for dealing with passwords. This
@@ -6,6 +12,18 @@ const crypto = require('crypto');
  * cryptographic keys from passwords.
  * @module easy-crypto/password
  */
+
+const messages = protobuf(
+  fs.readFileSync(path.resolve(__dirname, './password.proto'))
+);
+
+/**
+ * An error that hints that the hashing algorithm used is no longer valid and a
+ * rehash is required.
+ * @constant
+ * @type {Error}
+ */
+const InvalidHashError = new Error('Invalid algorithm, rehash required.');
 
 /**
  * Derive a cryptographically secure key using a password and a salt.
@@ -51,26 +69,82 @@ function deriveKeySync(password, salt, iterations, keylen, digest) {
 }
 
 /**
- * Hash a password using the scrypt password-based.
+ * Hash a password for storage.
  * @param {Data} password The password to be hashed.
- * @param {Data} salt The salt to be used while hashing. The salt should be as
- * unique as possible. It is recommended that a salt is random and at least 16
- * bytes long. See NIST SP 800-132 for details.
- * @param {number} keylen The length of the output hash.
- * @param {Object} [options]
- * @param {number} [options.cost=16384] CPU/memory cost parameter. Must be a
- * power of two greater than one.
- * @param {number} [options.blockSize=8] Block size parameter.
- * @param {number} [options.parallelization=1] Parallelization parameter.
- * @returns {Promise<Buffer>} The derived key.
+ * @returns {Promise<Buffer>} The hashed password optimized for storage.
  */
-function hashPassword(password, salt, keylen, options) {
+function hashPassword(password) {
+  const salt = crypto.randomBytes(32);
   return new Promise((resolve, reject) => {
-    crypto.scrypt(password, salt, keylen, options, (err, derivedKey) => {
-      if (err) reject(err);
-      resolve(derivedKey);
+    crypto.scrypt(password, salt, 64, (err, hashedPassword) => {
+      if (err) return reject(err);
+      resolve(
+        messages.Password.encode({
+          algorithm: messages.Algorithm.SCRYPT,
+          salt,
+          length: 64,
+          hash: hashedPassword
+        })
+      );
     });
   });
 }
 
-module.exports = { deriveKey, deriveKeySync, hashPassword };
+/**
+ * Hash a password synchronously for storage.
+ * @param {Data} password The password to be hashed.
+ * @returns {Buffer} The hashed password optimized for storage.
+ */
+function hashPasswordSync(password) {
+  const salt = crypto.randomBytes(32);
+  const hashedPassword = crypto.scryptSync(password, salt, 64);
+  return messages.Password.encode({
+    algorithm: messages.Algorithm.SCRYPT,
+    salt,
+    length: 64,
+    hash: hashedPassword
+  });
+}
+
+/**
+ * Verify a previously hashed and stored password.
+ * @param {Buffer} hashed The hashed password to be verified.
+ * @param {Data} password The actual password.
+ * @returns {Promise<boolean>} Wether the hash was valid for the given password.
+ */
+function verifyHash(hashed, password) {
+  return new Promise((resolve, reject) => {
+    const { algorithm, salt, length, hash } = messages.Password.decode(hashed);
+    if (algorithm !== messages.Algorithm.SCRYPT || hash.length !== length)
+      return reject(InvalidHashError);
+    crypto.scrypt(password, salt, 64, (err, recomputed) => {
+      if (err) return reject(err);
+      resolve(crypto.timingSafeEqual(recomputed, hash));
+    });
+  });
+}
+
+/**
+ * Verify a previously hashed and stored password synchronously.
+ * @param {Buffer} hashed The hashed password to be verified.
+ * @param {Data} password The actual password.
+ * @returns {Promise<boolean>} Wether the hash was valid for the given password.
+ * @throws {InvalidHashError} The hash was produced using an invalid algorithm.
+ * A rehash with the currently valid algorithm is required.
+ */
+function verifyHashSync(hashed, password) {
+  const { algorithm, salt, length, hash } = messages.Password.decode(hashed);
+  if (algorithm !== messages.Algorithm.SCRYPT || hash.length !== length)
+    throw InvalidHashError;
+  const recomputed = crypto.scryptSync(password, salt, 64);
+  return crypto.timingSafeEqual(recomputed, hash);
+}
+
+module.exports = {
+  deriveKey,
+  deriveKeySync,
+  hashPassword,
+  hashPasswordSync,
+  verifyHash,
+  verifyHashSync
+};

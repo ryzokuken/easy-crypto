@@ -28,5 +28,8 @@
     "jest": "^23.6.0",
     "jsdoc": "^3.5.5",
     "minami": "^1.2.3"
+  },
+  "dependencies": {
+    "protocol-buffers": "^4.1.0"
   }
 }
