@@ -13,6 +13,11 @@ var protobuf = require('protocol-buffers');
  * @module easy-crypto/password
  */
 
+/**
+ * The message format for encoding and decoding data using protobuf.
+ * @constant {Object}
+ * @inner
+ */
 const messages = protobuf(
   fs.readFileSync(path.resolve(__dirname, './password.proto'))
 );
@@ -20,13 +25,17 @@ const messages = protobuf(
 /**
  * An error that hints that the hashing algorithm used is no longer valid and a
  * rehash is required.
- * @constant
- * @type {Error}
+ * @constant {Error}
+ * @since REPLACEME
+ * @static
  */
 const InvalidHashError = new Error('Invalid algorithm, rehash required.');
 
 /**
  * Derive a cryptographically secure key using a password and a salt.
+ * @since REPLACEME
+ * @async
+ * @function deriveKey
  * @param {Data} password The password to be used
  * for key derivation.
  * @param {Data} salt The salt to be applied to the
@@ -39,6 +48,7 @@ const InvalidHashError = new Error('Invalid algorithm, rehash required.');
  * @param {number} keylen The length of the key to be produced.
  * @param {string} digest The HMAC digest algorithm to be used.
  * @returns {Promise<Buffer>} The derived key.
+ * @static
  */
 function deriveKey(password, salt, iterations, keylen, digest) {
   return new Promise((resolve, reject) => {
@@ -51,6 +61,8 @@ function deriveKey(password, salt, iterations, keylen, digest) {
 
 /**
  * Derive a cryptographically secure key synchronously using a password and a salt.
+ * @since REPLACEME
+ * @function deriveKeySync
  * @param {Data} password The password to be used
  * for key derivation.
  * @param {Data} salt The salt to be applied to the
@@ -63,6 +75,7 @@ function deriveKey(password, salt, iterations, keylen, digest) {
  * @param {number} keylen The length of the key to be produced.
  * @param {string} digest The HMAC digest algorithm to be used.
  * @returns {Buffer} The derived key.
+ * @static
  */
 function deriveKeySync(password, salt, iterations, keylen, digest) {
   return crypto.pbkdf2Sync(password, salt, iterations, keylen, digest);
@@ -70,8 +83,12 @@ function deriveKeySync(password, salt, iterations, keylen, digest) {
 
 /**
  * Hash a password for storage.
+ * @since REPLACEME
+ * @async
+ * @function hashPassword
  * @param {Data} password The password to be hashed.
  * @returns {Promise<Buffer>} The hashed password optimized for storage.
+ * @static
  */
 function hashPassword(password) {
   const salt = crypto.randomBytes(32);
@@ -92,8 +109,11 @@ function hashPassword(password) {
 
 /**
  * Hash a password synchronously for storage.
+ * @since REPLACEME
+ * @function hashPasswordSync
  * @param {Data} password The password to be hashed.
  * @returns {Buffer} The hashed password optimized for storage.
+ * @static
  */
 function hashPasswordSync(password) {
   const salt = crypto.randomBytes(32);
@@ -108,9 +128,13 @@ function hashPasswordSync(password) {
 
 /**
  * Verify a previously hashed and stored password.
+ * @since REPLACEME
+ * @async
+ * @function verifyHash
  * @param {Buffer} hashed The hashed password to be verified.
  * @param {Data} password The actual password.
  * @returns {Promise<boolean>} Wether the hash was valid for the given password.
+ * @static
  */
 function verifyHash(hashed, password) {
   return new Promise((resolve, reject) => {
@@ -126,11 +150,15 @@ function verifyHash(hashed, password) {
 
 /**
  * Verify a previously hashed and stored password synchronously.
+ * @since REPLACEME
+ * @function verifyHashSync
  * @param {Buffer} hashed The hashed password to be verified.
  * @param {Data} password The actual password.
  * @returns {Promise<boolean>} Wether the hash was valid for the given password.
- * @throws {InvalidHashError} The hash was produced using an invalid algorithm.
+ * @throws {module:easy-crypto/password~InvalidHashError} The hash was produced
+ * using an invalid algorithm.
  * A rehash with the currently valid algorithm is required.
+ * @static
  */
 function verifyHashSync(hashed, password) {
   const { algorithm, salt, length, hash } = messages.Password.decode(hashed);

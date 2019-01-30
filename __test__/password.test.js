@@ -26,7 +26,6 @@ test('verifies passwords asynchronously', async () => {
   const hashed = password.hashPasswordSync(passphrase);
   const verified = await password.verifyHash(hashed, passphrase);
   expect(verified).toBe(true);
-  // expect(password.verifyHashSync(hashed, passphrase)).toBe(true);
 });
 
 test('hashes and verifies passwords asynchronously', async () => {
