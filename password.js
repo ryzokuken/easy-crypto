@@ -146,5 +146,6 @@ module.exports = {
   hashPassword,
   hashPasswordSync,
   verifyHash,
-  verifyHashSync
+  verifyHashSync,
+  InvalidHashError
 };
