@@ -4,6 +4,8 @@
 > crypto API for Node.js
 
 ![](https://img.shields.io/npm/v/easy-crypto.svg?style=plastic)
+![](https://img.shields.io/travis/com/ryzokuken/easy-crypto.svg?style=plastic)
+![](https://img.shields.io/badge/blessed-by%20core-green.svg)
 
 ## Goals
 
