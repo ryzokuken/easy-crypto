@@ -26,14 +26,14 @@ const messages = protobuf(
  * An error that hints that the hashing algorithm used is no longer valid and a
  * rehash is required.
  * @constant {Error}
- * @since REPLACEME
+ * @since 0.2.0
  * @static
  */
 const InvalidHashError = new Error('Invalid algorithm, rehash required.');
 
 /**
  * Derive a cryptographically secure key using a password and a salt.
- * @since REPLACEME
+ * @since 0.2.0
  * @async
  * @function deriveKey
  * @param {Data} password The password to be used
@@ -61,7 +61,7 @@ function deriveKey(password, salt, iterations, keylen, digest) {
 
 /**
  * Derive a cryptographically secure key synchronously using a password and a salt.
- * @since REPLACEME
+ * @since 0.2.0
  * @function deriveKeySync
  * @param {Data} password The password to be used
  * for key derivation.
@@ -83,7 +83,7 @@ function deriveKeySync(password, salt, iterations, keylen, digest) {
 
 /**
  * Hash a password for storage.
- * @since REPLACEME
+ * @since 0.2.0
  * @async
  * @function hashPassword
  * @param {Data} password The password to be hashed.
@@ -109,7 +109,7 @@ function hashPassword(password) {
 
 /**
  * Hash a password synchronously for storage.
- * @since REPLACEME
+ * @since 0.2.0
  * @function hashPasswordSync
  * @param {Data} password The password to be hashed.
  * @returns {Buffer} The hashed password optimized for storage.
@@ -128,7 +128,7 @@ function hashPasswordSync(password) {
 
 /**
  * Verify a previously hashed and stored password.
- * @since REPLACEME
+ * @since 0.2.0
  * @async
  * @function verifyHash
  * @param {Buffer} hashed The hashed password to be verified.
@@ -150,7 +150,7 @@ function verifyHash(hashed, password) {
 
 /**
  * Verify a previously hashed and stored password synchronously.
- * @since REPLACEME
+ * @since 0.2.0
  * @function verifyHashSync
  * @param {Buffer} hashed The hashed password to be verified.
  * @param {Data} password The actual password.
