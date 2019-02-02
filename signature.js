@@ -8,12 +8,15 @@ const crypto = require('crypto');
 
 /**
  * Generate signatures for a message using a private key.
+ * @since 0.1.0
+ * @function sign
  * @param {Object|string|Buffer|KeyObject} privateKey The private key to be used for signing the message.
  * @param {string} algorithm The hashing algorithm to be used.
  * @param {Data} message The message to be signed.
  * @param {string} inputEncoding The encoding of the `message`. If `message` is a string and no value is provided, an encoding of `'utf8'` will be enforced. Ignored if message is a `Buffer`, `TypedArray` or `DataView`.
  * @param {string} outputEncoding The encoding of the output signature. If provided a `string` is returned, otherwise a `Buffer` is returned.
  * @returns {string|Buffer} The generated signature for the provided message.
+ * @static
  */
 function sign(privateKey, algorithm, message, inputEncoding, outputEncoding) {
   const signFunc = crypto.createSign(algorithm);
@@ -24,12 +27,16 @@ function sign(privateKey, algorithm, message, inputEncoding, outputEncoding) {
 
 /**
  * Generate signatures for a message encapsulated in a stream using a private key.
+ * @since 0.1.0
+ * @async
+ * @function signStream
  * @param {Object|string|Buffer|KeyObject} privateKey The private key to be used for signing the message.
  * @param {string} algorithm The hashing algorithm to be used.
  * @param {ReadableStream<Data>} input The input stream containing the message to be signed.
  * @param {string} inputEncoding The encoding of the `message`. If `message` is a string and no value is provided, an encoding of `'utf8'` will be enforced. Ignored if message is a `Buffer`, `TypedArray` or `DataView`.
  * @param {string} outputEncoding The encoding of the output signature. If provided a `string` is returned, otherwise a `Buffer` is returned.
  * @returns {Promise<string|Buffer>} The generated signature for the provided message.
+ * @static
  */
 function signStream(
   privateKey,
@@ -79,6 +86,8 @@ function signStream(
 
 /**
  * Verify if a signature is valid for a given message using the corresponding public key.
+ * @since 0.1.0
+ * @function verify
  * @param {Object|string|Buffer|KeyObject} publicKey The public key to be used for verifying the signature.
  * @param {string} algorithm The hashing algorithm to be used.
  * @param {Data} message The message for which the signature has been generated.
@@ -86,6 +95,7 @@ function signStream(
  * @param {string} inputEncoding The encoding of the `message`. If `message` is a string and no value is provided, an encoding of `'utf8'` will be enforced. Ignored if message is a `Buffer`, `TypedArray` or `DataView`.
  * @param {string} signatureEncoding The encoding of the provided `signature`. If a signatureEncoding is specified, the signature is expected to be a string; otherwise signature is expected to be a Buffer, TypedArray, or DataView.
  * @returns {boolean} Wether the signature was valid or not.
+ * @static
  */
 function verify(
   publicKey,
@@ -103,6 +113,9 @@ function verify(
 
 /**
  * Verify if a signature is valid for a given message encapsulated in a stream using the corresponding public key.
+ * @since 0.1.0
+ * @async
+ * @function verifyStream
  * @param {Object|string|Buffer|KeyObject} publicKey The public key to be used for verifying the signature.
  * @param {string} algorithm The hashing algorithm to be used.
  * @param {ReadableStream<Data>} input The stream containing the message for which the signature has been generated.
@@ -110,6 +123,7 @@ function verify(
  * @param {string} inputEncoding The encoding of the `message`. If `message` is a string and no value is provided, an encoding of `'utf8'` will be enforced. Ignored if message is a `Buffer`, `TypedArray` or `DataView`.
  * @param {string} signatureEncoding The encoding of the provided `signature`. If a signatureEncoding is specified, the signature is expected to be a string; otherwise signature is expected to be a Buffer, TypedArray, or DataView.
  * @returns {Promise<boolean>} Wether the signature was valid or not.
+ * @static
  */
 function verifyStream(
   publicKey,
