@@ -155,7 +155,7 @@ function verifyHash(hashed, password) {
  * @param {Buffer} hashed The hashed password to be verified.
  * @param {Data} password The actual password.
  * @returns {Promise<boolean>} Wether the hash was valid for the given password.
- * @throws {module:easy-crypto/password~InvalidHashError} The hash was produced
+ * @throws {module:easy-crypto/password.InvalidHashError} The hash was produced
  * using an invalid algorithm.
  * A rehash with the currently valid algorithm is required.
  * @static
