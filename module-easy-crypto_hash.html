@@ -2,22 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Module: easy-crypto/hash</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>easy-crypto/hash - Documentation</title>
 
-    <script src="scripts/prettify/prettify.js"> </script>
-    <script src="scripts/prettify/lang-css.js"> </script>
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
     <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
     <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
 </head>
-
 <body>
 
-<div id="main">
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
 
-    <h1 class="page-title">Module: easy-crypto/hash</h1>
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Modules</li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-easy-crypto_hash.html">easy-crypto/hash</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_hash.html#~hash">hash</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_hash.html#~hashStream">hashStream</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-easy-crypto_password.html">easy-crypto/password</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_password.html#.deriveKey">deriveKey</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_password.html#.deriveKeySync">deriveKeySync</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_password.html#.hashPassword">hashPassword</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_password.html#.hashPasswordSync">hashPasswordSync</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_password.html#.verifyHash">verifyHash</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_password.html#.verifyHashSync">verifyHashSync</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-easy-crypto_signature.html">easy-crypto/signature</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_signature.html#~sign">sign</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_signature.html#~signStream">signStream</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_signature.html#~verify">verify</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_signature.html#~verifyStream">verifyStream</a></span></li><li class="nav-heading"><a href="global.html">Globals</a></li>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">easy-crypto/hash</h1>
+    
 
     
 
@@ -43,14 +56,7 @@
 
         
             
-
-
-
-
-
-
-
-
+<div class="section-method">
 
 
 
@@ -115,6 +121,12 @@
 
 
 
+
+
+
+
+
+</div>
         
     
     </div>
@@ -125,9 +137,7 @@
 
     
 
-    
-
-    
+     
 
     
 
@@ -138,12 +148,11 @@
 
         
             
+<div class="section-method">
 
     
 
-    
     <h4 class="name" id="~hash"><span class="type-signature">(inner) </span>hash<span class="signature">(algorithm, message, inputEncoding, outputEncoding)</span><span class="type-signature"> &rarr; {string|Buffer}</span></h4>
-    
 
     
 
@@ -152,132 +161,6 @@
 <div class="description">
     <p>Hash a given message using the specified hash algorithm.</p>
 </div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>algorithm</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The hashing algorithm to be used.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>message</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="global.html#Data">Data</a></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The message to be hashed.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>inputEncoding</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The encoding of the <code>message</code>. If nothing is provided and <code>message</code> is a string, an encoding of <code>'utf8'</code> is enforced. If <code>message</code> is a Buffer, TypedArray, or DataView, then inputEncoding is ignored.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>outputEncoding</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The encoding of the output. If encoding is provided a string will be returned; otherwise a Buffer is returned.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
 
 
 
@@ -331,65 +214,6 @@
 
 
 
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>The hash of the input message.</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">string</span>
-|
-
-<span class="param-type">Buffer</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="~hashStream"><span class="type-signature">(inner) </span>hashStream<span class="signature">(algorithm, input, inputEncoding, outputEncoding)</span><span class="type-signature"> &rarr; {Promise.&lt;(string|Buffer)>}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    <p>Hash a message encapsulated inside a stream using the specified hash algorithm.</p>
-</div>
-
-
-
-
-
-
-
-
-
     <h5>Parameters:</h5>
     
 
@@ -421,7 +245,7 @@
             <td class="type">
             
                 
-<span class="param-type">string</span>
+<span class="param-type"><code>string</code></span>
 
 
             
@@ -431,20 +255,23 @@
 
             
 
-            <td class="description last"><p>The hashing algorithm to be used.</p></td>
+            <td class="description last">
+                <p>The hashing algorithm to be used.</p>
+                
+            </td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>input</code></td>
+                <td class="name"><code>message</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">ReadableStream.&lt;<a href="global.html#Data">Data</a>></span>
+<span class="param-type"><code><a href="global.html#Data">Data</a></code></span>
 
 
             
@@ -454,7 +281,10 @@
 
             
 
-            <td class="description last"><p>The stream containing the message to be hashed.</p></td>
+            <td class="description last">
+                <p>The message to be hashed.</p>
+                
+            </td>
         </tr>
 
     
@@ -467,7 +297,7 @@
             <td class="type">
             
                 
-<span class="param-type">string</span>
+<span class="param-type"><code>string</code></span>
 
 
             
@@ -477,7 +307,10 @@
 
             
 
-            <td class="description last"><p>The encoding of the <code>message</code>. If nothing is provided and <code>message</code> is a string, an encoding of <code>'utf8'</code> is enforced. If <code>message</code> is a Buffer, TypedArray, or DataView, then inputEncoding is ignored.</p></td>
+            <td class="description last">
+                <p>The encoding of the <code>message</code>. If nothing is provided and <code>message</code> is a string, an encoding of <code>'utf8'</code> is enforced. If <code>message</code> is a Buffer, TypedArray, or DataView, then inputEncoding is ignored.</p>
+                
+            </td>
         </tr>
 
     
@@ -490,7 +323,7 @@
             <td class="type">
             
                 
-<span class="param-type">string</span>
+<span class="param-type"><code>string</code></span>
 
 
             
@@ -500,13 +333,75 @@
 
             
 
-            <td class="description last"><p>The encoding of the output. If encoding is provided a string will be returned; otherwise a Buffer is returned.</p></td>
+            <td class="description last">
+                <p>The encoding of the output. If encoding is provided a string will be returned; otherwise a Buffer is returned.</p>
+                
+            </td>
         </tr>
 
     
     </tbody>
 </table>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-returns">
+<h5>Returns:</h5>
+
+        
+
+<dl class="param-type">
+    <dt>
+        Type:
+    </dt>
+    <dd>
+        
+<span class="param-type"><code>string</code></span>
+|
+
+<span class="param-type"><code>Buffer</code></span>
+
+
+    </dd>
+</dl>
+
+
+<div class="param-desc">
+    <p>The hash of the input message.</p>
+</div>
+
+    
+</div>
+
+
+
+</div>
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id="~hashStream"><span class="type-signature">(inner) </span>hashStream<span class="signature">(algorithm, input, inputEncoding, outputEncoding)</span><span class="type-signature"> &rarr; {Promise.&lt;(string|Buffer)>}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Hash a message encapsulated inside a stream using the specified hash algorithm.</p>
+</div>
 
 
 
@@ -560,37 +455,176 @@
 
 
 
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>algorithm</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>string</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>The hashing algorithm to be used.</p>
+                
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>input</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>ReadableStream.&lt;<a href="global.html#Data">Data</a>></code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>The stream containing the message to be hashed.</p>
+                
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>inputEncoding</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>string</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>The encoding of the <code>message</code>. If nothing is provided and <code>message</code> is a string, an encoding of <code>'utf8'</code> is enforced. If <code>message</code> is a Buffer, TypedArray, or DataView, then inputEncoding is ignored.</p>
+                
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>outputEncoding</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>string</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>The encoding of the output. If encoding is provided a string will be returned; otherwise a Buffer is returned.</p>
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+<div class="section-returns">
 <h5>Returns:</h5>
 
         
-<div class="param-desc">
-    <p>The hash of the input message.</p>
-</div>
 
-
-
-<dl>
+<dl class="param-type">
     <dt>
-        Type
+        Type:
     </dt>
     <dd>
         
-<span class="param-type">Promise.&lt;(string|Buffer)></span>
+<span class="param-type"><code>Promise.&lt;(string|Buffer)></code></span>
 
 
     </dd>
 </dl>
 
+
+<div class="param-desc">
+    <p>The hash of the input message.</p>
+</div>
+
     
+</div>
 
 
 
-
-
+</div>
         
     
 
@@ -606,17 +640,13 @@
 
 </div>
 
-<nav>
-    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-easy-crypto_hash.html">easy-crypto/hash</a></li><li><a href="module-easy-crypto_signature.html">easy-crypto/signature</a></li></ul><h3><a href="global.html">Global</a></h3>
-</nav>
-
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Mon Jan 28 2019 14:54:46 GMT+0530 (India Standard Time)
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Sat Feb 02 2019 19:52:07 GMT+0530 (India Standard Time) using the Minami theme.
 </footer>
 
-<script> prettyPrint(); </script>
-<script src="scripts/linenumber.js"> </script>
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
 </body>
 </html>

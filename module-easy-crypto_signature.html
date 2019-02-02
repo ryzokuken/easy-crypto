@@ -2,22 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Module: easy-crypto/signature</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>easy-crypto/signature - Documentation</title>
 
-    <script src="scripts/prettify/prettify.js"> </script>
-    <script src="scripts/prettify/lang-css.js"> </script>
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
     <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
     <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
 </head>
-
 <body>
 
-<div id="main">
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
 
-    <h1 class="page-title">Module: easy-crypto/signature</h1>
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Modules</li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-easy-crypto_hash.html">easy-crypto/hash</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_hash.html#~hash">hash</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_hash.html#~hashStream">hashStream</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-easy-crypto_password.html">easy-crypto/password</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_password.html#.deriveKey">deriveKey</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_password.html#.deriveKeySync">deriveKeySync</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_password.html#.hashPassword">hashPassword</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_password.html#.hashPasswordSync">hashPasswordSync</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_password.html#.verifyHash">verifyHash</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_password.html#.verifyHashSync">verifyHashSync</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-easy-crypto_signature.html">easy-crypto/signature</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_signature.html#~sign">sign</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_signature.html#~signStream">signStream</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_signature.html#~verify">verify</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_signature.html#~verifyStream">verifyStream</a></span></li><li class="nav-heading"><a href="global.html">Globals</a></li>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">easy-crypto/signature</h1>
+    
 
     
 
@@ -44,14 +57,7 @@ and verifying signatures.</p></div>
 
         
             
-
-
-
-
-
-
-
-
+<div class="section-method">
 
 
 
@@ -116,6 +122,12 @@ and verifying signatures.</p></div>
 
 
 
+
+
+
+
+
+</div>
         
     
     </div>
@@ -126,9 +138,7 @@ and verifying signatures.</p></div>
 
     
 
-    
-
-    
+     
 
     
 
@@ -139,12 +149,11 @@ and verifying signatures.</p></div>
 
         
             
+<div class="section-method">
 
     
 
-    
     <h4 class="name" id="~sign"><span class="type-signature">(inner) </span>sign<span class="signature">(privateKey, algorithm, message, inputEncoding, outputEncoding)</span><span class="type-signature"> &rarr; {string|Buffer}</span></h4>
-    
 
     
 
@@ -153,164 +162,6 @@ and verifying signatures.</p></div>
 <div class="description">
     <p>Generate signatures for a message using a private key.</p>
 </div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>privateKey</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-|
-
-<span class="param-type">string</span>
-|
-
-<span class="param-type">Buffer</span>
-|
-
-<span class="param-type">KeyObject</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The private key to be used for signing the message.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>algorithm</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The hashing algorithm to be used.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>message</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="global.html#Data">Data</a></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The message to be signed.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>inputEncoding</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The encoding of the <code>message</code>. If <code>message</code> is a string and no value is provided, an encoding of <code>'utf8'</code> will be enforced. Ignored if message is a <code>Buffer</code>, <code>TypedArray</code> or <code>DataView</code>.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>outputEncoding</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The encoding of the output signature. If provided a <code>string</code> is returned, otherwise a <code>Buffer</code> is returned.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
 
 
 
@@ -364,65 +215,6 @@ and verifying signatures.</p></div>
 
 
 
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>The generated signature for the provided message.</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">string</span>
-|
-
-<span class="param-type">Buffer</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="~signStream"><span class="type-signature">(inner) </span>signStream<span class="signature">(privateKey, algorithm, input, inputEncoding, outputEncoding)</span><span class="type-signature"> &rarr; {Promise.&lt;(string|Buffer)>}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    <p>Generate signatures for a message encapsulated in a stream using a private key.</p>
-</div>
-
-
-
-
-
-
-
-
-
     <h5>Parameters:</h5>
     
 
@@ -454,16 +246,16 @@ and verifying signatures.</p></div>
             <td class="type">
             
                 
-<span class="param-type">Object</span>
+<span class="param-type"><code>Object</code></span>
 |
 
-<span class="param-type">string</span>
+<span class="param-type"><code>string</code></span>
 |
 
-<span class="param-type">Buffer</span>
+<span class="param-type"><code>Buffer</code></span>
 |
 
-<span class="param-type">KeyObject</span>
+<span class="param-type"><code>KeyObject</code></span>
 
 
             
@@ -473,7 +265,10 @@ and verifying signatures.</p></div>
 
             
 
-            <td class="description last"><p>The private key to be used for signing the message.</p></td>
+            <td class="description last">
+                <p>The private key to be used for signing the message.</p>
+                
+            </td>
         </tr>
 
     
@@ -486,7 +281,7 @@ and verifying signatures.</p></div>
             <td class="type">
             
                 
-<span class="param-type">string</span>
+<span class="param-type"><code>string</code></span>
 
 
             
@@ -496,20 +291,23 @@ and verifying signatures.</p></div>
 
             
 
-            <td class="description last"><p>The hashing algorithm to be used.</p></td>
+            <td class="description last">
+                <p>The hashing algorithm to be used.</p>
+                
+            </td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>input</code></td>
+                <td class="name"><code>message</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">ReadableStream.&lt;<a href="global.html#Data">Data</a>></span>
+<span class="param-type"><code><a href="global.html#Data">Data</a></code></span>
 
 
             
@@ -519,7 +317,10 @@ and verifying signatures.</p></div>
 
             
 
-            <td class="description last"><p>The input stream containing the message to be signed.</p></td>
+            <td class="description last">
+                <p>The message to be signed.</p>
+                
+            </td>
         </tr>
 
     
@@ -532,7 +333,7 @@ and verifying signatures.</p></div>
             <td class="type">
             
                 
-<span class="param-type">string</span>
+<span class="param-type"><code>string</code></span>
 
 
             
@@ -542,7 +343,10 @@ and verifying signatures.</p></div>
 
             
 
-            <td class="description last"><p>The encoding of the <code>message</code>. If <code>message</code> is a string and no value is provided, an encoding of <code>'utf8'</code> will be enforced. Ignored if message is a <code>Buffer</code>, <code>TypedArray</code> or <code>DataView</code>.</p></td>
+            <td class="description last">
+                <p>The encoding of the <code>message</code>. If <code>message</code> is a string and no value is provided, an encoding of <code>'utf8'</code> will be enforced. Ignored if message is a <code>Buffer</code>, <code>TypedArray</code> or <code>DataView</code>.</p>
+                
+            </td>
         </tr>
 
     
@@ -555,7 +359,7 @@ and verifying signatures.</p></div>
             <td class="type">
             
                 
-<span class="param-type">string</span>
+<span class="param-type"><code>string</code></span>
 
 
             
@@ -565,13 +369,75 @@ and verifying signatures.</p></div>
 
             
 
-            <td class="description last"><p>The encoding of the output signature. If provided a <code>string</code> is returned, otherwise a <code>Buffer</code> is returned.</p></td>
+            <td class="description last">
+                <p>The encoding of the output signature. If provided a <code>string</code> is returned, otherwise a <code>Buffer</code> is returned.</p>
+                
+            </td>
         </tr>
 
     
     </tbody>
 </table>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-returns">
+<h5>Returns:</h5>
+
+        
+
+<dl class="param-type">
+    <dt>
+        Type:
+    </dt>
+    <dd>
+        
+<span class="param-type"><code>string</code></span>
+|
+
+<span class="param-type"><code>Buffer</code></span>
+
+
+    </dd>
+</dl>
+
+
+<div class="param-desc">
+    <p>The generated signature for the provided message.</p>
+</div>
+
+    
+</div>
+
+
+
+</div>
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id="~signStream"><span class="type-signature">(inner) </span>signStream<span class="signature">(privateKey, algorithm, input, inputEncoding, outputEncoding)</span><span class="type-signature"> &rarr; {Promise.&lt;(string|Buffer)>}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Generate signatures for a message encapsulated in a stream using a private key.</p>
+</div>
 
 
 
@@ -625,62 +491,6 @@ and verifying signatures.</p></div>
 
 
 
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>The generated signature for the provided message.</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Promise.&lt;(string|Buffer)></span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="~verify"><span class="type-signature">(inner) </span>verify<span class="signature">(publicKey, algorithm, message, signature, inputEncoding, signatureEncoding)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    <p>Verify if a signature is valid for a given message using the corresponding public key.</p>
-</div>
-
-
-
-
-
-
-
-
-
     <h5>Parameters:</h5>
     
 
@@ -706,22 +516,22 @@ and verifying signatures.</p></div>
 
         <tr>
             
-                <td class="name"><code>publicKey</code></td>
+                <td class="name"><code>privateKey</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">Object</span>
+<span class="param-type"><code>Object</code></span>
 |
 
-<span class="param-type">string</span>
+<span class="param-type"><code>string</code></span>
 |
 
-<span class="param-type">Buffer</span>
+<span class="param-type"><code>Buffer</code></span>
 |
 
-<span class="param-type">KeyObject</span>
+<span class="param-type"><code>KeyObject</code></span>
 
 
             
@@ -731,7 +541,10 @@ and verifying signatures.</p></div>
 
             
 
-            <td class="description last"><p>The public key to be used for verifying the signature.</p></td>
+            <td class="description last">
+                <p>The private key to be used for signing the message.</p>
+                
+            </td>
         </tr>
 
     
@@ -744,7 +557,7 @@ and verifying signatures.</p></div>
             <td class="type">
             
                 
-<span class="param-type">string</span>
+<span class="param-type"><code>string</code></span>
 
 
             
@@ -754,20 +567,23 @@ and verifying signatures.</p></div>
 
             
 
-            <td class="description last"><p>The hashing algorithm to be used.</p></td>
+            <td class="description last">
+                <p>The hashing algorithm to be used.</p>
+                
+            </td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>message</code></td>
+                <td class="name"><code>input</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type"><a href="global.html#Data">Data</a></span>
+<span class="param-type"><code>ReadableStream.&lt;<a href="global.html#Data">Data</a>></code></span>
 
 
             
@@ -777,33 +593,10 @@ and verifying signatures.</p></div>
 
             
 
-            <td class="description last"><p>The message for which the signature has been generated.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>signature</code></td>
-            
-
-            <td class="type">
-            
+            <td class="description last">
+                <p>The input stream containing the message to be signed.</p>
                 
-<span class="param-type">string</span>
-|
-
-<span class="param-type">Buffer</span>
-
-
-            
             </td>
-
-            
-
-            
-
-            <td class="description last"><p>The signature to be verified.</p></td>
         </tr>
 
     
@@ -816,7 +609,7 @@ and verifying signatures.</p></div>
             <td class="type">
             
                 
-<span class="param-type">string</span>
+<span class="param-type"><code>string</code></span>
 
 
             
@@ -826,20 +619,23 @@ and verifying signatures.</p></div>
 
             
 
-            <td class="description last"><p>The encoding of the <code>message</code>. If <code>message</code> is a string and no value is provided, an encoding of <code>'utf8'</code> will be enforced. Ignored if message is a <code>Buffer</code>, <code>TypedArray</code> or <code>DataView</code>.</p></td>
+            <td class="description last">
+                <p>The encoding of the <code>message</code>. If <code>message</code> is a string and no value is provided, an encoding of <code>'utf8'</code> will be enforced. Ignored if message is a <code>Buffer</code>, <code>TypedArray</code> or <code>DataView</code>.</p>
+                
+            </td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>signatureEncoding</code></td>
+                <td class="name"><code>outputEncoding</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">string</span>
+<span class="param-type"><code>string</code></span>
 
 
             
@@ -849,13 +645,72 @@ and verifying signatures.</p></div>
 
             
 
-            <td class="description last"><p>The encoding of the provided <code>signature</code>. If a signatureEncoding is specified, the signature is expected to be a string; otherwise signature is expected to be a Buffer, TypedArray, or DataView.</p></td>
+            <td class="description last">
+                <p>The encoding of the output signature. If provided a <code>string</code> is returned, otherwise a <code>Buffer</code> is returned.</p>
+                
+            </td>
         </tr>
 
     
     </tbody>
 </table>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-returns">
+<h5>Returns:</h5>
+
+        
+
+<dl class="param-type">
+    <dt>
+        Type:
+    </dt>
+    <dd>
+        
+<span class="param-type"><code>Promise.&lt;(string|Buffer)></code></span>
+
+
+    </dd>
+</dl>
+
+
+<div class="param-desc">
+    <p>The generated signature for the provided message.</p>
+</div>
+
+    
+</div>
+
+
+
+</div>
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id="~verify"><span class="type-signature">(inner) </span>verify<span class="signature">(publicKey, algorithm, message, signature, inputEncoding, signatureEncoding)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Verify if a signature is valid for a given message using the corresponding public key.</p>
+</div>
 
 
 
@@ -909,62 +764,6 @@ and verifying signatures.</p></div>
 
 
 
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>Wether the signature was valid or not.</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">boolean</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="~verifyStream"><span class="type-signature">(inner) </span>verifyStream<span class="signature">(publicKey, algorithm, input, signature, inputEncoding, signatureEncoding)</span><span class="type-signature"> &rarr; {Promise.&lt;boolean>}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    <p>Verify if a signature is valid for a given message encapsulated in a stream using the corresponding public key.</p>
-</div>
-
-
-
-
-
-
-
-
-
     <h5>Parameters:</h5>
     
 
@@ -996,16 +795,16 @@ and verifying signatures.</p></div>
             <td class="type">
             
                 
-<span class="param-type">Object</span>
+<span class="param-type"><code>Object</code></span>
 |
 
-<span class="param-type">string</span>
+<span class="param-type"><code>string</code></span>
 |
 
-<span class="param-type">Buffer</span>
+<span class="param-type"><code>Buffer</code></span>
 |
 
-<span class="param-type">KeyObject</span>
+<span class="param-type"><code>KeyObject</code></span>
 
 
             
@@ -1015,7 +814,10 @@ and verifying signatures.</p></div>
 
             
 
-            <td class="description last"><p>The public key to be used for verifying the signature.</p></td>
+            <td class="description last">
+                <p>The public key to be used for verifying the signature.</p>
+                
+            </td>
         </tr>
 
     
@@ -1028,7 +830,7 @@ and verifying signatures.</p></div>
             <td class="type">
             
                 
-<span class="param-type">string</span>
+<span class="param-type"><code>string</code></span>
 
 
             
@@ -1038,20 +840,23 @@ and verifying signatures.</p></div>
 
             
 
-            <td class="description last"><p>The hashing algorithm to be used.</p></td>
+            <td class="description last">
+                <p>The hashing algorithm to be used.</p>
+                
+            </td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>input</code></td>
+                <td class="name"><code>message</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">ReadableStream.&lt;<a href="global.html#Data">Data</a>></span>
+<span class="param-type"><code><a href="global.html#Data">Data</a></code></span>
 
 
             
@@ -1061,7 +866,10 @@ and verifying signatures.</p></div>
 
             
 
-            <td class="description last"><p>The stream containing the message for which the signature has been generated.</p></td>
+            <td class="description last">
+                <p>The message for which the signature has been generated.</p>
+                
+            </td>
         </tr>
 
     
@@ -1074,10 +882,10 @@ and verifying signatures.</p></div>
             <td class="type">
             
                 
-<span class="param-type">string</span>
+<span class="param-type"><code>string</code></span>
 |
 
-<span class="param-type">Buffer</span>
+<span class="param-type"><code>Buffer</code></span>
 
 
             
@@ -1087,7 +895,10 @@ and verifying signatures.</p></div>
 
             
 
-            <td class="description last"><p>The signature to be verified.</p></td>
+            <td class="description last">
+                <p>The signature to be verified.</p>
+                
+            </td>
         </tr>
 
     
@@ -1100,7 +911,7 @@ and verifying signatures.</p></div>
             <td class="type">
             
                 
-<span class="param-type">string</span>
+<span class="param-type"><code>string</code></span>
 
 
             
@@ -1110,7 +921,10 @@ and verifying signatures.</p></div>
 
             
 
-            <td class="description last"><p>The encoding of the <code>message</code>. If <code>message</code> is a string and no value is provided, an encoding of <code>'utf8'</code> will be enforced. Ignored if message is a <code>Buffer</code>, <code>TypedArray</code> or <code>DataView</code>.</p></td>
+            <td class="description last">
+                <p>The encoding of the <code>message</code>. If <code>message</code> is a string and no value is provided, an encoding of <code>'utf8'</code> will be enforced. Ignored if message is a <code>Buffer</code>, <code>TypedArray</code> or <code>DataView</code>.</p>
+                
+            </td>
         </tr>
 
     
@@ -1123,7 +937,7 @@ and verifying signatures.</p></div>
             <td class="type">
             
                 
-<span class="param-type">string</span>
+<span class="param-type"><code>string</code></span>
 
 
             
@@ -1133,13 +947,72 @@ and verifying signatures.</p></div>
 
             
 
-            <td class="description last"><p>The encoding of the provided <code>signature</code>. If a signatureEncoding is specified, the signature is expected to be a string; otherwise signature is expected to be a Buffer, TypedArray, or DataView.</p></td>
+            <td class="description last">
+                <p>The encoding of the provided <code>signature</code>. If a signatureEncoding is specified, the signature is expected to be a string; otherwise signature is expected to be a Buffer, TypedArray, or DataView.</p>
+                
+            </td>
         </tr>
 
     
     </tbody>
 </table>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-returns">
+<h5>Returns:</h5>
+
+        
+
+<dl class="param-type">
+    <dt>
+        Type:
+    </dt>
+    <dd>
+        
+<span class="param-type"><code>boolean</code></span>
+
+
+    </dd>
+</dl>
+
+
+<div class="param-desc">
+    <p>Wether the signature was valid or not.</p>
+</div>
+
+    
+</div>
+
+
+
+</div>
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id="~verifyStream"><span class="type-signature">(inner) </span>verifyStream<span class="signature">(publicKey, algorithm, input, signature, inputEncoding, signatureEncoding)</span><span class="type-signature"> &rarr; {Promise.&lt;boolean>}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Verify if a signature is valid for a given message encapsulated in a stream using the corresponding public key.</p>
+</div>
 
 
 
@@ -1193,37 +1066,240 @@ and verifying signatures.</p></div>
 
 
 
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>publicKey</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>Object</code></span>
+|
+
+<span class="param-type"><code>string</code></span>
+|
+
+<span class="param-type"><code>Buffer</code></span>
+|
+
+<span class="param-type"><code>KeyObject</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>The public key to be used for verifying the signature.</p>
+                
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>algorithm</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>string</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>The hashing algorithm to be used.</p>
+                
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>input</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>ReadableStream.&lt;<a href="global.html#Data">Data</a>></code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>The stream containing the message for which the signature has been generated.</p>
+                
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>signature</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>string</code></span>
+|
+
+<span class="param-type"><code>Buffer</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>The signature to be verified.</p>
+                
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>inputEncoding</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>string</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>The encoding of the <code>message</code>. If <code>message</code> is a string and no value is provided, an encoding of <code>'utf8'</code> will be enforced. Ignored if message is a <code>Buffer</code>, <code>TypedArray</code> or <code>DataView</code>.</p>
+                
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>signatureEncoding</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>string</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>The encoding of the provided <code>signature</code>. If a signatureEncoding is specified, the signature is expected to be a string; otherwise signature is expected to be a Buffer, TypedArray, or DataView.</p>
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+<div class="section-returns">
 <h5>Returns:</h5>
 
         
-<div class="param-desc">
-    <p>Wether the signature was valid or not.</p>
-</div>
 
-
-
-<dl>
+<dl class="param-type">
     <dt>
-        Type
+        Type:
     </dt>
     <dd>
         
-<span class="param-type">Promise.&lt;boolean></span>
+<span class="param-type"><code>Promise.&lt;boolean></code></span>
 
 
     </dd>
 </dl>
 
+
+<div class="param-desc">
+    <p>Wether the signature was valid or not.</p>
+</div>
+
     
+</div>
 
 
 
-
-
+</div>
         
     
 
@@ -1239,17 +1315,13 @@ and verifying signatures.</p></div>
 
 </div>
 
-<nav>
-    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-easy-crypto_hash.html">easy-crypto/hash</a></li><li><a href="module-easy-crypto_signature.html">easy-crypto/signature</a></li></ul><h3><a href="global.html">Global</a></h3>
-</nav>
-
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Mon Jan 28 2019 14:54:46 GMT+0530 (India Standard Time)
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Sat Feb 02 2019 19:52:07 GMT+0530 (India Standard Time) using the Minami theme.
 </footer>
 
-<script> prettyPrint(); </script>
-<script src="scripts/linenumber.js"> </script>
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
 </body>
 </html>

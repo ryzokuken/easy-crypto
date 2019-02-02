@@ -2,32 +2,39 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Home - Documentation</title>
 
-    <script src="scripts/prettify/prettify.js"> </script>
-    <script src="scripts/prettify/lang-css.js"> </script>
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
     <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
     <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
 </head>
-
 <body>
 
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Modules</li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-easy-crypto_hash.html">easy-crypto/hash</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_hash.html#~hash">hash</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_hash.html#~hashStream">hashStream</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-easy-crypto_password.html">easy-crypto/password</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_password.html#.deriveKey">deriveKey</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_password.html#.deriveKeySync">deriveKeySync</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_password.html#.hashPassword">hashPassword</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_password.html#.hashPasswordSync">hashPasswordSync</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_password.html#.verifyHash">verifyHash</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_password.html#.verifyHashSync">verifyHashSync</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-easy-crypto_signature.html">easy-crypto/signature</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_signature.html#~sign">sign</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_signature.html#~signStream">signStream</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_signature.html#~verify">verify</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_signature.html#~verifyStream">verifyStream</a></span></li><li class="nav-heading"><a href="global.html">Globals</a></li>
+</nav>
+
 <div id="main">
-
-    <h1 class="page-title">Home</h1>
+    
 
     
 
 
 
     
-
-
-    <h3> </h3>
-
 
 
 
@@ -40,11 +47,40 @@
     
 
 
+    <section class="readme">
+        <article><h1>easy-crypto</h1><blockquote>
+<p>A WIP module aimed at providing a safer, easier to use and beginner friendly
+crypto API for Node.js</p>
+</blockquote>
+<p><img src="https://img.shields.io/npm/v/easy-crypto.svg?style=plastic" alt="">
+<img src="https://img.shields.io/travis/com/ryzokuken/easy-crypto.svg?style=plastic" alt="">
+<img src="https://img.shields.io/badge/blessed-by%20core-green.svg" alt=""></p>
+<h2>Goals</h2><ol>
+<li>Make <code>crypto</code> <strong>easy</strong> to use.</li>
+<li>Make <code>crypto</code> <strong>safe</strong> to use.</li>
+<li>Require as little crypto-specific knowledge as possible.</li>
+</ol>
+<h2>Features/Roadmap</h2><ul>
+<li>[ ] Symmetric Encryption, Decryption and AEAD</li>
+<li>[ ] Asymmetric Encryption and Decryption</li>
+<li>[X] Asymmetric Signing and Verification of signatures</li>
+<li>[X] Cryptographic hashing</li>
+<li>[X] Password-based key derivation</li>
+<li>[X] Password hashing and verification</li>
+<li>[ ] Random number generation</li>
+</ul>
+<h2>Installation</h2><pre class="prettyprint source"><code>$ npm install easy-crypto</code></pre><h2>Usage</h2><p>Importing the module itself will return <code>undefined</code> since the behavior of the
+entire module is broken down into a set of intent-based submodules.</p>
+<pre class="prettyprint source lang-js"><code>const password = require('easy-crypto/password');
 
-
-    <section>
-        <article><h1>easy-crypto</h1><p>A WIP module aimed at providing a safer, easier to use and beginner friendly crypto API for Node.js</p>
-<h3>Notice</h3><p>This module is currently a work-in-progress. Please do not use it in production until before the <code>1.0.0</code> release since the API may break or might as well be outright unusable to unsafe.</p></article>
+const hashedPassword = password.hashPasswordSync('correct horse battery staple');
+fs.writeFileSync('myfile', hashedPassword); // Ideally, store it in a database.</code></pre><p>For an exhaustive list of all submodules and their members, check out the
+<a href="https://ryzokuken.github.io/easy-crypto">API docs</a></p>
+<h2>License</h2><p><a href="LICENSE">MIT</a></p>
+<p><code>Copyright (c) 2019 Ujjwal Sharma</code></p>
+<h2>Notice</h2><p>This module is currently a work-in-progress. Please do not use it in production
+until before the <code>1.0.0</code> release since the API may break or might as well be
+outright unusable to unsafe.</p></article>
     </section>
 
 
@@ -54,17 +90,13 @@
 
 </div>
 
-<nav>
-    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-easy-crypto_hash.html">easy-crypto/hash</a></li><li><a href="module-easy-crypto_signature.html">easy-crypto/signature</a></li></ul><h3><a href="global.html">Global</a></h3>
-</nav>
-
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Mon Jan 28 2019 14:54:46 GMT+0530 (India Standard Time)
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Sat Feb 02 2019 19:52:07 GMT+0530 (India Standard Time) using the Minami theme.
 </footer>
 
-<script> prettyPrint(); </script>
-<script src="scripts/linenumber.js"> </script>
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
 </body>
 </html>
