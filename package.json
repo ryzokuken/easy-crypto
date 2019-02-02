@@ -21,7 +21,7 @@
   "bugs": {
     "url": "https://github.com/ryzokuken/easy-crypto/issues"
   },
-  "homepage": "https://github.com/ryzokuken/easy-crypto#readme",
+  "homepage": "https://ryzokuken.github.io/easy-crypto",
   "devDependencies": {
     "eslint": "^5.12.0",
     "gh-pages": "^2.0.1",
