@@ -24,7 +24,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Modules</li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-easy-crypto_hash.html">easy-crypto/hash</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_hash.html#~hash">hash</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_hash.html#~hashStream">hashStream</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-easy-crypto_password.html">easy-crypto/password</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_password.html#.deriveKey">deriveKey</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_password.html#.deriveKeySync">deriveKeySync</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_password.html#.hashPassword">hashPassword</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_password.html#.hashPasswordSync">hashPasswordSync</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_password.html#.verifyHash">verifyHash</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_password.html#.verifyHashSync">verifyHashSync</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-easy-crypto_signature.html">easy-crypto/signature</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_signature.html#~sign">sign</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_signature.html#~signStream">signStream</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_signature.html#~verify">verify</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_signature.html#~verifyStream">verifyStream</a></span></li><li class="nav-heading"><a href="global.html">Globals</a></li>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Modules</li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-easy-crypto_hash.html">easy-crypto/hash</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_hash.html#.hash">hash</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_hash.html#.hashStream">hashStream</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-easy-crypto_password.html">easy-crypto/password</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_password.html#.deriveKey">deriveKey</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_password.html#.deriveKeySync">deriveKeySync</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_password.html#.hashPassword">hashPassword</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_password.html#.hashPasswordSync">hashPasswordSync</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_password.html#.verifyHash">verifyHash</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_password.html#.verifyHashSync">verifyHashSync</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-easy-crypto_signature.html">easy-crypto/signature</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_signature.html#.sign">sign</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_signature.html#.signStream">signStream</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_signature.html#.verify">verify</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_signature.html#.verifyStream">verifyStream</a></span></li><li class="nav-heading"><a href="global.html">Globals</a></li>
 </nav>
 
 <div id="main">
@@ -49,12 +49,15 @@
 
 /**
  * Generate signatures for a message using a private key.
+ * @since 0.1.0
+ * @function sign
  * @param {Object|string|Buffer|KeyObject} privateKey The private key to be used for signing the message.
  * @param {string} algorithm The hashing algorithm to be used.
  * @param {Data} message The message to be signed.
  * @param {string} inputEncoding The encoding of the `message`. If `message` is a string and no value is provided, an encoding of `'utf8'` will be enforced. Ignored if message is a `Buffer`, `TypedArray` or `DataView`.
  * @param {string} outputEncoding The encoding of the output signature. If provided a `string` is returned, otherwise a `Buffer` is returned.
  * @returns {string|Buffer} The generated signature for the provided message.
+ * @static
  */
 function sign(privateKey, algorithm, message, inputEncoding, outputEncoding) {
   const signFunc = crypto.createSign(algorithm);
@@ -65,12 +68,16 @@ function sign(privateKey, algorithm, message, inputEncoding, outputEncoding) {
 
 /**
  * Generate signatures for a message encapsulated in a stream using a private key.
+ * @since 0.1.0
+ * @async
+ * @function signStream
  * @param {Object|string|Buffer|KeyObject} privateKey The private key to be used for signing the message.
  * @param {string} algorithm The hashing algorithm to be used.
  * @param {ReadableStream&lt;Data>} input The input stream containing the message to be signed.
  * @param {string} inputEncoding The encoding of the `message`. If `message` is a string and no value is provided, an encoding of `'utf8'` will be enforced. Ignored if message is a `Buffer`, `TypedArray` or `DataView`.
  * @param {string} outputEncoding The encoding of the output signature. If provided a `string` is returned, otherwise a `Buffer` is returned.
  * @returns {Promise&lt;string|Buffer>} The generated signature for the provided message.
+ * @static
  */
 function signStream(
   privateKey,
@@ -120,6 +127,8 @@ function signStream(
 
 /**
  * Verify if a signature is valid for a given message using the corresponding public key.
+ * @since 0.1.0
+ * @function verify
  * @param {Object|string|Buffer|KeyObject} publicKey The public key to be used for verifying the signature.
  * @param {string} algorithm The hashing algorithm to be used.
  * @param {Data} message The message for which the signature has been generated.
@@ -127,6 +136,7 @@ function signStream(
  * @param {string} inputEncoding The encoding of the `message`. If `message` is a string and no value is provided, an encoding of `'utf8'` will be enforced. Ignored if message is a `Buffer`, `TypedArray` or `DataView`.
  * @param {string} signatureEncoding The encoding of the provided `signature`. If a signatureEncoding is specified, the signature is expected to be a string; otherwise signature is expected to be a Buffer, TypedArray, or DataView.
  * @returns {boolean} Wether the signature was valid or not.
+ * @static
  */
 function verify(
   publicKey,
@@ -144,6 +154,9 @@ function verify(
 
 /**
  * Verify if a signature is valid for a given message encapsulated in a stream using the corresponding public key.
+ * @since 0.1.0
+ * @async
+ * @function verifyStream
  * @param {Object|string|Buffer|KeyObject} publicKey The public key to be used for verifying the signature.
  * @param {string} algorithm The hashing algorithm to be used.
  * @param {ReadableStream&lt;Data>} input The stream containing the message for which the signature has been generated.
@@ -151,6 +164,7 @@ function verify(
  * @param {string} inputEncoding The encoding of the `message`. If `message` is a string and no value is provided, an encoding of `'utf8'` will be enforced. Ignored if message is a `Buffer`, `TypedArray` or `DataView`.
  * @param {string} signatureEncoding The encoding of the provided `signature`. If a signatureEncoding is specified, the signature is expected to be a string; otherwise signature is expected to be a Buffer, TypedArray, or DataView.
  * @returns {Promise&lt;boolean>} Wether the signature was valid or not.
+ * @static
  */
 function verifyStream(
   publicKey,
@@ -219,7 +233,7 @@ module.exports = { sign, signStream, verify, verifyStream };
 <br class="clear">
 
 <footer>
-    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Sat Feb 02 2019 19:52:07 GMT+0530 (India Standard Time) using the Minami theme.
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Sat Feb 02 2019 22:04:09 GMT+0530 (India Standard Time) using the Minami theme.
 </footer>
 
 <script>prettyPrint();</script>

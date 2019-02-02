@@ -24,7 +24,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Modules</li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-easy-crypto_hash.html">easy-crypto/hash</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_hash.html#~hash">hash</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_hash.html#~hashStream">hashStream</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-easy-crypto_password.html">easy-crypto/password</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_password.html#.deriveKey">deriveKey</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_password.html#.deriveKeySync">deriveKeySync</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_password.html#.hashPassword">hashPassword</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_password.html#.hashPasswordSync">hashPasswordSync</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_password.html#.verifyHash">verifyHash</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_password.html#.verifyHashSync">verifyHashSync</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-easy-crypto_signature.html">easy-crypto/signature</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_signature.html#~sign">sign</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_signature.html#~signStream">signStream</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_signature.html#~verify">verify</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_signature.html#~verifyStream">verifyStream</a></span></li><li class="nav-heading"><a href="global.html">Globals</a></li>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Modules</li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-easy-crypto_hash.html">easy-crypto/hash</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_hash.html#.hash">hash</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_hash.html#.hashStream">hashStream</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-easy-crypto_password.html">easy-crypto/password</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_password.html#.deriveKey">deriveKey</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_password.html#.deriveKeySync">deriveKeySync</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_password.html#.hashPassword">hashPassword</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_password.html#.hashPasswordSync">hashPasswordSync</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_password.html#.verifyHash">verifyHash</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_password.html#.verifyHashSync">verifyHashSync</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-easy-crypto_signature.html">easy-crypto/signature</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_signature.html#.sign">sign</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_signature.html#.signStream">signStream</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_signature.html#.verify">verify</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-easy-crypto_signature.html#.verifyStream">verifyStream</a></span></li><li class="nav-heading"><a href="global.html">Globals</a></li>
 </nav>
 
 <div id="main">
@@ -48,11 +48,14 @@
 
 /**
  * Hash a given message using the specified hash algorithm.
+ * @since 0.1.0
+ * @function hash
  * @param {string} algorithm The hashing algorithm to be used.
  * @param {Data} message The message to be hashed.
  * @param {string} inputEncoding The encoding of the `message`. If nothing is provided and `message` is a string, an encoding of `'utf8'` is enforced. If `message` is a Buffer, TypedArray, or DataView, then inputEncoding is ignored.
  * @param {string} outputEncoding The encoding of the output. If encoding is provided a string will be returned; otherwise a Buffer is returned.
  * @returns {string|Buffer} The hash of the input message.
+ * @static
  */
 function hash(algorithm, message, inputEncoding, outputEncoding) {
   const func = crypto.createHash(algorithm);
@@ -62,11 +65,15 @@ function hash(algorithm, message, inputEncoding, outputEncoding) {
 
 /**
  * Hash a message encapsulated inside a stream using the specified hash algorithm.
+ * @since 0.1.0
+ * @async
+ * @function hashStream
  * @param {string} algorithm The hashing algorithm to be used.
  * @param {ReadableStream&lt;Data>} input The stream containing the message to be hashed.
  * @param {string} inputEncoding The encoding of the `message`. If nothing is provided and `message` is a string, an encoding of `'utf8'` is enforced. If `message` is a Buffer, TypedArray, or DataView, then inputEncoding is ignored.
  * @param {string} outputEncoding The encoding of the output. If encoding is provided a string will be returned; otherwise a Buffer is returned.
  * @returns {Promise&lt;string|Buffer>} The hash of the input message.
+ * @static
  */
 function hashStream(algorithm, input, inputEncoding, outputEncoding) {
   return new Promise((resolve, reject) => {
@@ -129,7 +136,7 @@ module.exports = {
 <br class="clear">
 
 <footer>
-    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Sat Feb 02 2019 19:52:07 GMT+0530 (India Standard Time) using the Minami theme.
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Sat Feb 02 2019 22:04:09 GMT+0530 (India Standard Time) using the Minami theme.
 </footer>
 
 <script>prettyPrint();</script>
