@@ -124,8 +124,8 @@ test('it should accept buffer (der) keys', () => {
     }
   });
 
-  const signed = signature.sign(privateKey, 'sha256', message);
-  expect(signature.verify(publicKey, 'sha256', message, signed)).toBe(true);
+  const signed = signature.sign({ key: privateKey, format: 'der', type: 'pkcs8' }, 'sha256', message);
+  expect(signature.verify({ key: publicKey, format: 'der', type: 'spki' }, 'sha256', message, signed)).toBe(true);
 });
 
 test('it should accept object (KeyObject) keys', () => {
